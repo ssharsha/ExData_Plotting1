@@ -44,7 +44,7 @@ points(newdata2$combDateTime, newdata2$Sub_metering_2, type = 'l', col="red")
 points(newdata2$combDateTime, newdata2$Sub_metering_3, type = 'l', col="blue")
 
 #Define the legends for the plot
-legend("topright", box.lwd = 2.0, lty =1, lwd =2, cex =0.6, y.intersp = 0.3, col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
+legend("topright", lty =1, col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
 
 #Copy the plot to a PNG file
 dev.copy(png, file= "plot3.png", width = 480, height = 480, units = "px")
