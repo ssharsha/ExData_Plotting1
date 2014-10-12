@@ -39,9 +39,6 @@ newdata2$Sub_metering_3<-as.numeric(as.character(newdata2$Sub_metering_3))
 newdata2$Voltage<-as.numeric(as.character(newdata2$Voltage))
 newdata2$Global_reactive_power<-as.numeric(as.character(newdata2$Global_reactive_power))
 
-#Set the margins
-par(mar = c(6,6,2,2))
-
 #Set the number of rows and columns for the plot
 par(mfrow = c(2,2))
 
@@ -54,7 +51,7 @@ with(newdata2, {
     points(combDateTime, Sub_metering_3, type = 'l', col="blue")
     
     #Assign legends to the third plot i.e plot on 2nd row & 1st column
-    legend("topright", lty =1, lwd =2, bty = "n", cex=0.45, y.intersp = 0.2, inset = c(-0.05, -0.05), col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
+    legend("topright", lty =1, bty = "n", col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
     plot(combDateTime, Global_reactive_power, type = 'l', xlab = "datetime")
 }
 )
@@ -62,6 +59,5 @@ with(newdata2, {
 #Copy the plot to a PNG file
 dev.copy(png, file= "plot4.png", width = 480, height = 480, units = "px")
 dev.off()
-
 
 
